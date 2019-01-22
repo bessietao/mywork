@@ -1,0 +1,25 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  {% include head.html %}
+  <body>
+    {% include navigation.html %}
+
+      <section id="post">
+        <div class="post-wrapper">
+          <h1>{{ page.title }}</h1>
+
+          {{ content }}
+
+          <div class="post-disqus-wrapper">
+
+          </div>
+        </div>
+      </section>
+
+    {% include footer.html %}
+    {% include js.html %}
+  </body>
+</html>

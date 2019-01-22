@@ -1,0 +1,28 @@
+<!-- Work Section -->
+
+<section id="work">
+
+    <div class="work-items-wrapper">
+      <a href="#" class="work-item-link-wrapper" style="background-image: url('/assets/images/work/app_product.jpg')">
+        <h2 class="work-item-title">Work Item 1</h2>
+      </a>
+
+      <a href="#" class="work-item-link-wrapper" style="background-image: url('/assets/images/work/saas_product.jpg')">
+        <h2 class="work-item-title">Work Item 2</h2>
+      </a>
+
+      <a href="#" class="work-item-link-wrapper" style="background-image: url('/assets/images/work/video_production.jpg')">
+        <h2 class="work-item-title">Work Item 3</h2>
+      </a>
+    </div>
+
+    <div class="work-statistics-wrapper">
+      {% for work in site.data.works %}
+        <div class="work-stat">
+          <h2>{{ work.stat-number }}</h2>
+          <p>{{ work.stat-description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    
+</section>

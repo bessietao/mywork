@@ -1,0 +1,493 @@
+/**
+ * Table of Contents
+ *
+ * 1. Imported Fonts
+ * 2. Sass Variables
+ * 3. Typography
+ * 4. Global Settings & HTML Elements
+ * 5. Navigation Styling
+ * 6. Hero Styling
+ * 7. Services Styling
+ * 8. Work Styling
+ * 9. Contact Styling
+ * 10. Footer Styling
+ * 11. Blog Styling
+ * 12. Post Styling
+ *
+ */
+/* 1. Imported Fonts */
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,700");
+/* 2. Sass Variables */
+/* 3. Typography */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-family: "Fira Sans", "Helvetica Nueue", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6,
+.huge, .x-large, .large, .medium, .small, .x-small {
+  margin: 0 0 1rem 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; }
+
+.huge, h1 {
+  font-size: 2rem;
+  line-height: 1.2; }
+
+.x-large, h2 {
+  font-size: 1.5rem;
+  line-height: 1.2; }
+
+.large, h3 {
+  font-size: 1.375rem;
+  line-height: 1.2; }
+
+.medium, h4 {
+  font-size: 1.125rem;
+  line-height: 1.2; }
+
+.small, h5 {
+  font-size: 1rem;
+  line-height: 1.2; }
+
+.x-small, h6 {
+  font-size: 0.875rem;
+  line-height: 1.2; }
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.2; }
+
+em, .text-italic {
+  font-style: italic; }
+
+.text-center {
+  text-align: center; }
+
+a {
+  color: #6689C9; }
+
+/* 4. Global Settings & HTML Elements */
+*, html {
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  height: 100%;
+  background: #fefefe;
+  padding-top: calc(.25rem + 80px); }
+
+/* Containers */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; }
+
+@media screen and (min-width: 900px) {
+  .container {
+    width: 80%;
+    padding: 0; } }
+/* Buttons */
+.button {
+  padding: 5px 20px;
+  border: 3px solid #050709;
+  border-radius: 3px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #050709;
+  background: transparent;
+  cursor: pointer; }
+
+/* Inputs, Textarea, Labels */
+input, textarea {
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem;
+  font-family: "Fira Sans", "Helvetica Nueue", Helvetica, sans-serif;
+  font-weight: 700;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12); }
+
+label {
+  display: block;
+  font-size: 1.25rem; }
+
+/* SVG */
+svg {
+  display: block;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  padding: 0; }
+
+@media screen and (min-width: 900px) {
+  svg {
+    height: 160px; } }
+/* Section */
+.section-header {
+  width: 100%;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  text-align: center; }
+
+@media screen and (min-width: 900px) {
+  .section-header {
+    width: 80%; } }
+@media screen and (min-width: 1200px) {
+  .section-header {
+    width: 50%; } }
+/* 5. Navigation Styling */
+/* Navigation Section Styling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  max-width: 100%;
+  height: calc(.25rem + 80px);
+  background: #fefefe; }
+
+.header-gradient-bar {
+  position: relative;
+  z-index: 2000;
+  width: 100%;
+  max-width: 100%;
+  height: 0.25rem;
+  background: linear-gradient(90deg, #ff6a00, #ee0979); }
+
+.navigation-container {
+  position: relative;
+  z-index: 2000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fefefe;
+  height: 80px;
+  padding: 0 20px; }
+
+.navigation-brand-wrapper a {
+  text-decoration: none;
+  color: #050709; }
+
+.navigation-menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer; }
+
+.menu-icon {
+  height: 2rem;
+  width: auto;
+  padding-left: 0.5rem; }
+  .menu-icon path {
+    fill: #050709; }
+
+.navigation-links-wrapper {
+  position: relative;
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  width: 100%;
+  max-width: 100%;
+  background: #050709;
+  z-index: -1000; }
+  .navigation-links-wrapper ul {
+    list-style: none;
+    padding: 2rem 0;
+    margin: 0;
+    text-align: center; }
+    .navigation-links-wrapper ul li {
+      margin-bottom: 1rem; }
+
+.navigation-links-wrapper.open {
+  opacity: 1;
+  transform: translateY(0);
+  z-index: 1999; }
+
+.navigation-link {
+  font-size: 1.75rem;
+  text-decoration: none;
+  color: #fefefe; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  .navigation-container {
+    padding: 0 10%; } }
+/* 6. Hero Styling */
+/* Hero Section Styling */
+section#hero {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url("../images/hero.jpg"); }
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background: #050709; }
+
+.hero-heading {
+  position: relative;
+  z-index: 200;
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0;
+  color: #fefefe;
+  letter-spacing: 0.1rem; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  section#hero {
+    height: 400px; }
+
+  .hero-heading {
+    font-size: 3rem;
+    letter-spacing: 0.15rem; } }
+/* 7. Services Styling */
+/* Services Section Styling */
+section#services {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 20px; }
+
+.services-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 0; }
+
+.service-item {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem; }
+
+.service-item:last-child {
+  margin-bottom: 0; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  section#services {
+    padding: 0 10%; }
+
+  .services-wrapper {
+    flex-direction: row;
+    justify-content: space-between; }
+
+  .service-item {
+    width: 30%;
+    max-width: 30%;
+    margin-bottom: 0; } }
+/* 8. Work Styling */
+/* Work Section Styling */
+section#work {
+  width: 100%;
+  max-width: 100%; }
+
+.work-items-wrapper {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column; }
+
+.work-item-link-wrapper {
+  height: 18rem;
+  background-size: cover;
+  background-position: 50% 50%;
+  width: 100%;
+  max-width: 100%;
+  text-decoration: none; }
+
+.work-item-title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #0072FF, #00A2FF);
+  color: #fefefe;
+  opacity: 0;
+  transition: all 0.3s ease-in-out; }
+  .work-item-title:hover {
+    opacity: 1; }
+
+.work-statistics-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 20px;
+  text-align: center; }
+
+.work-stat {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 2rem; }
+  .work-stat h2 {
+    margin-bottom: 0; }
+  .work-stat p {
+    margin-top: 0.5rem; }
+
+.work-stat:last-child {
+  margin-bottom: 0; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  .work-items-wrapper {
+    flex-direction: row;
+    justify-content: flex-start; }
+
+  .work-item-link-wrapper {
+    width: 33.3333%;
+    max-width: 33.3333%; }
+
+  .work-statistics-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4rem 10%; }
+
+  .work-stat {
+    width: 25%;
+    max-width: 25%; } }
+/* 9. Contact Styling */
+/* Contact Section Styling */
+section#contact {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, #F7971E, #FFD200);
+  color: #fefefe;
+  padding: 4rem 20px; }
+  section#contact h2 {
+    text-align: center; }
+  section#contact form input {
+    width: 100%; }
+
+.contact-button {
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #fefefe;
+  background: linear-gradient(90deg, #EF473A, #CB2D3E);
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease-in-out; }
+  .contact-button:hover {
+    color: #e5e5e5;
+    box-shadow: none;
+    opacity: 0.95; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  section#contact {
+    padding: 4rem 10%; } }
+@media screen and (min-width: 1200px) {
+  section#contact {
+    padding: 4rem 30%; } }
+/* 10. Footer Styling */
+/* Footer Styling */
+footer {
+  min-height: 80px;
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.copyright {
+  text-align: center;
+  margin-bottom: 2rem; }
+
+.social-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.social-media-link svg {
+  height: 1.5rem;
+  width: auto; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  footer {
+    padding: 0 10%;
+    flex-direction: row;
+    align-items: center; }
+
+  .copyright {
+    text-align: left;
+    margin-bottom: 0; }
+
+  .social-wrapper {
+    width: 20%;
+    max-width: 20%; } }
+/* 11. Blog Styling */
+/* Blog Styling */
+section#blog {
+  position: relative;
+  padding: 0rem 20px;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, #E0E7EF, #F3F5F8); }
+
+.blog-index-wrapper {
+  margin: 20px auto; }
+
+.blog-index-item {
+  margin-bottom: 3rem; }
+
+.blog-title {
+  text-decoration: none; }
+  .blog-title h2 {
+    font-size: 1.75rem; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  section#blog {
+    padding: 0rem 10%; } }
+@media screen and (min-width: 1200px) {
+  section#blog {
+    padding: 0rem 20%; } }
+/* 12. Post Styling */
+/* Post Styling */
+section#post {
+  padding: 2rem 20px; }
+
+/* Media Queries */
+@media screen and (min-width: 900px) {
+  section#post {
+    padding: 2rem 10%; } }
+@media screen and (min-width: 1200px) {
+  section#post {
+    padding: 2rem 20%; } }
